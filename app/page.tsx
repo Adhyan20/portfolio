@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
 import ProjectCard from "@/components/ui/projectcard";
+import Image from "next/image";
 
 export default function Home() {
   const [showOverlay, setShowOverlay] = useState(false);
@@ -62,10 +62,12 @@ export default function Home() {
         <div className="flex flex-row items-center gap-18 h-full">
           {/* Profile Image */}
           <div className="flex-shrink-0">
-            <img
+            <Image
               src="/Image1.png"
               alt="Adhyan Kumar"
-              className="w-36 h-36 md:w-40 md:h-40 rounded-full object-cover shadow-xl"
+              width={160}
+              height={160}
+              className="rounded-full object-cover shadow-xl"
             />
           </div>
 
@@ -75,10 +77,10 @@ export default function Home() {
               About Me →
             </h2>
             <p className="text-base md:text-lg text-gray-200 leading-relaxed">
-              I’m <b>Adhyan</b> an AI/ML & Data Science engineer with hands-on
+              I am <b>Adhyan</b> an AI/ML & Data Science engineer with hands-on
               experience developing machine learning models, deploying scalable
               solutions, and driving product impact using Python, ML frameworks,
-              and cloud tools — blending technical depth with real-world
+              and cloud tools - blending technical depth with real-world
               execution.
             </p>
             <button
@@ -98,11 +100,15 @@ export default function Home() {
         >
           <div className="text-center max-w-3xl text-white space-y-4">
             {/* Profile Image */}
-            <img
-              src="/Image1.png"
-              alt="Adhyan Kumar"
-              className="w-32 h-32 md:w-36 md:h-36 rounded-full object-cover shadow-lg mx-auto"
-            />
+            <div className="flex justify-center items-center">
+              <Image
+                src="/Image1.png"
+                alt="Adhyan Kumar"
+                width={160}
+                height={160}
+                className="rounded-full object-cover shadow-xl"
+              />
+            </div>
 
             {/* Name */}
             <h1 className="text-2xl md:text-3xl font-bold text-white">
@@ -120,7 +126,7 @@ export default function Home() {
               <strong>AI/ML & Data Science engineer</strong> with a strong
               foundation in <strong>machine learning</strong>,{" "}
               <strong>deep learning</strong>, and{" "}
-              <strong>cloud-integrated systems</strong>. I've built and deployed
+              <strong>cloud-integrated systems</strong>. I have built and deployed
               real-world solutions like an{" "}
               <strong>AI-powered journaling system</strong> with mood tracking,
               a <strong>resume intelligence engine</strong> using Gemini Flash,
@@ -131,7 +137,7 @@ export default function Home() {
               <strong>TensorFlow</strong>, <strong>SQL</strong>, and{" "}
               <strong>cloud platforms</strong> such as AWS and GCP. During my
               tenure at <strong>Cognizant</strong>, I worked on applied ML
-              workflows, enabling scalable, data-driven decision systems. I'm
+              workflows, enabling scalable, data-driven decision systems. I am
               passionate about building <strong>intelligent products</strong>{" "}
               that bridge science and real-world utility, backed by a solid
               understanding of both <strong>model architecture</strong> and{" "}
@@ -164,23 +170,28 @@ export default function Home() {
 
           {/* -- Cognizant Experience -- */}
           <div className="mb-12 text-center max-w-2xl">
-            <img
-              src="/cognizant.png" // Replace with actual path
-              alt="Cognizant"
-              className="w-45 h-auto mx-auto mb-3 rounded-md shadow-md"
-            />
+            <div className="w-[180px] mx-auto mb-3">
+              <Image
+                src="/cognizant.png"
+                alt="Cognizant"
+                width={180}
+                height={100}
+                className="rounded-md shadow-md w-full h-auto"
+              />
+            </div>
+
             <p className="text-sm md:text-base text-gray-300 mb-3">
-              <strong>May 2024 – Present</strong> • Remote Internship •{" "}
+              <strong>May 2024 - Present</strong> • Remote Internship •{" "}
               <strong>Cognizant</strong>
             </p>
             <p className="text-sm md:text-base text-gray-200 leading-relaxed">
-              As a <strong>Programmer Analyst Intern</strong> at Cognizant, I’ve
+              As a <strong>Programmer Analyst Intern</strong> at Cognizant, I have
               been immersed in a full-stack engineering environment focused on
               enterprise-grade technologies. My current scope involves hands-on
               work with <strong>C# and .NET</strong> for backend service
               development, leveraging <strong>Docker</strong> for containerized
               deployments, and working with <strong>SQL Server</strong> for data
-              layer integration. I'm actively applying <strong>Angular</strong>{" "}
+              layer integration. I am actively applying <strong>Angular</strong>{" "}
               for frontend interfaces and contributing to internal tools built
               on modern web stacks. This role has strengthened my understanding
               of scalable architecture, DevOps workflows, and cross-functional
@@ -191,13 +202,17 @@ export default function Home() {
 
           {/* -- Nova Nectar Experience -- */}
           <div className="mb-10 text-center max-w-2xl">
-            <img
-              src="/novanectar.png" // Replace with actual path
-              alt="Nova Nectar"
-              className="w-45 h-auto mx-auto mb-3 rounded-md shadow-md"
-            />
+            <div className="w-[180px] mx-auto mb-3">
+              <Image
+                src="/novanectar.png" // Image must be in /public
+                alt="Nova Nectar"
+                width={180}
+                height={100}
+                className="rounded-md shadow-md w-full h-auto"
+              />
+            </div>
             <p className="text-sm md:text-base text-gray-300 mb-3">
-              <strong>April 2024 – June 2024</strong> • On-site •{" "}
+              <strong>April 2024 - June 2024</strong> • On-site •{" "}
               <strong>Nova Nectar</strong>
             </p>
             <p className="text-sm md:text-base text-gray-200 leading-relaxed">
@@ -418,6 +433,15 @@ export default function Home() {
                     className="text-yellow-400 hover:underline"
                   >
                     github.com/Adhyan20
+                  </a>
+                </p>
+                <p>
+                  <strong>Phone-No:</strong>{" "}
+                  <a
+                    target="_blank"
+                    className="text-yellow-400 hover:underline"
+                  >
+                    +91-9897962322
                   </a>
                 </p>
               </div>

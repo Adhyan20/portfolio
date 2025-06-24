@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -37,11 +38,15 @@ export default function ProjectCard({
           <div className="max-w-3xl text-center text-white">
             <h2 className="text-2xl font-bold text-yellow-400 mb-4">{title}</h2>
             {imageSrc && (
-              <img
-                src={imageSrc}
-                alt={title}
-                className="w-150 h-auto mx-auto mb-4 rounded shadow-md"
-              />
+              <div className="w-[500px] mx-auto mb-4">
+                <Image
+                  src={imageSrc}
+                  alt={title}
+                  width={500}
+                  height={380}
+                  className="rounded shadow-md w-full h-auto"
+                />
+              </div>
             )}
             <p className="text-base text-gray-200 leading-relaxed mb-6">
               {fullDescription}
@@ -56,7 +61,7 @@ export default function ProjectCard({
                 View on GitHub
               </a>
             )}
-            <br/>
+            <br />
             <button
               onClick={() => setExpanded(false)}
               className="bg-yellow-400 text-black font-medium px-5 py-2 rounded-full hover:scale-105 hover:shadow-[0_0_10px_rgba(255,255,0,0.6)] transition"
