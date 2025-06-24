@@ -16,82 +16,86 @@ export default function Home() {
       className="min-h-screen bg-cover bg-center bg-no-repeat text-white flex items-center justify-center px-4"
       style={{ backgroundImage: "url('/picc.png')" }}
     >
-      <div className="absolute top-3 left-6 z-20 text-white text-3xl font-bold tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-        PORTFOLIO
-      </div>
+      {/* Logo Text */}
+<div className="absolute top-3 left-4 sm:left-6 z-20 text-white text-2xl sm:text-3xl font-bold tracking-wide sm:tracking-widest drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
+  PORTFOLIO
+</div>
 
-      <div className="absolute top-5 left-1/2 transform -translate-x-1/2 z-30">
-        <nav className="flex space-x-6 text-sm md:text-base font-medium text-white">
-          <a
-            onClick={() => setShowWorkEx(true)}
-            className="cursor-pointer hover:text-yellow-400 transition"
-          >
-            Work Ex
-          </a>
-          <a
-            onClick={() => setShowProjects(true)}
-            className="cursor-pointer hover:text-yellow-400 transition"
-          >
-            Projects
-          </a>
+{/* Navigation Bar */}
+<div className="absolute top-16 sm:top-5 left-1/2 transform -translate-x-1/2 z-30 w-full px-4">
+  <nav className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 text-sm sm:text-base font-medium text-white">
+    <button
+      onClick={() => setShowWorkEx(true)}
+      className="cursor-pointer hover:text-yellow-400 transition"
+    >
+      Work Ex
+    </button>
+    <button
+      onClick={() => setShowProjects(true)}
+      className="cursor-pointer hover:text-yellow-400 transition"
+    >
+      Projects
+    </button>
+    <button
+      onClick={() => setShowSkills(true)}
+      className="cursor-pointer hover:text-yellow-400 transition"
+    >
+      Skills
+    </button>
+    <button
+      onClick={() => setShowContact(true)}
+      className="cursor-pointer hover:text-yellow-400 transition"
+    >
+      Contact
+    </button>
+    <button
+      onClick={() => setShowResume(true)}
+      className="cursor-pointer hover:text-yellow-400 transition"
+    >
+      Resume
+    </button>
+  </nav>
+</div>
 
-          <a
-            onClick={() => setShowSkills(true)}
-            className="cursor-pointer hover:text-yellow-400 transition"
-          >
-            Skills
-          </a>
-
-          <a
-            onClick={() => setShowContact(true)}
-            className="cursor-pointer hover:text-yellow-400 transition"
-          >
-            Contact
-          </a>
-          <a
-            onClick={() => setShowResume(true)}
-            className="cursor-pointer hover:text-yellow-400 transition"
-          >
-            Resume
-          </a>
-        </nav>
-      </div>
 
       {/* Simulated Laptop Screen - Clean Centered Layout */}
-      <div className="relative w-[640px] h-[360px] bg-black rounded-md shadow-lg px-6 py-6 z-10 transform translate-y-[-60px]">
-        <div className="flex flex-row items-center gap-18 h-full">
-          {/* Profile Image */}
-          <div className="flex-shrink-0">
-            <Image
-              src="/Image1.png"
-              alt="Adhyan Kumar"
-              width={160}
-              height={160}
-              className="rounded-full object-cover shadow-xl"
-            />
-          </div>
+      <div className="relative w-full max-w-[540px] aspect-[16/9] bg-black rounded-md shadow-lg px-4 sm:px-6 py-6 z-10 md:translate-y-[-60px]">
+  <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-10">
 
-          {/* About Me Section */}
-          <div className="flex-1 text-left overflow-y-auto h-full pr-1 py-2 flex flex-col justify-center">
-            <h2 className="text-yellow-400 text-xl md:text-2xl font-bold mb-2">
-              About Me →
-            </h2>
-            <p className="text-base md:text-lg text-gray-200 leading-relaxed">
-              I am <b>Adhyan</b> an AI/ML & Data Science engineer with hands-on
-              experience developing machine learning models, deploying scalable
-              solutions, and driving product impact using Python, ML frameworks,
-              and cloud tools - blending technical depth with real-world
-              execution.
-            </p>
-            <button
-              onClick={() => setShowOverlay(true)}
-              className="self-start mt-4 bg-yellow-400 text-black font-medium px-4 py-1.5 text-sm rounded-full shadow-sm transition duration-300 hover:shadow-[0_0_8px_rgba(255,255,0,0.6)] hover:scale-105"
-            >
-              Learn More
-            </button>
-          </div>
-        </div>
-      </div>
+    {/* Profile Image */}
+    <div className="flex-shrink-0">
+      <Image
+        src="/Image1.png"
+        alt="Adhyan Kumar"
+        width={150}
+        height={150}
+        className="rounded-full object-cover shadow-xl mx-auto md:mx-0"
+      />
+    </div>
+
+    {/* About Me Section */}
+    <div className="flex-1 text-left flex flex-col justify-center">
+      <h2 className="text-yellow-400 text-xl md:text-2xl font-bold mb-2 text-center md:text-left">
+        About Me →
+      </h2>
+      <p className="text-base md:text-lg text-gray-200 leading-relaxed text-center md:text-left">
+        I am <b>Adhyan</b>, an AI/ML & Data Science engineer with hands-on experience
+        developing machine learning models, deploying scalable solutions, and
+        driving product impact using Python, ML frameworks, and cloud tools —
+        blending technical depth with real-world execution.
+      </p>
+
+      <button
+        onClick={() => setShowOverlay(true)}
+        className="mt-4 bg-yellow-400 text-black font-medium px-4 py-1.5 text-sm rounded-full shadow-sm transition duration-300 hover:shadow-[0_0_8px_rgba(255,255,0,0.6)] hover:scale-105 self-center md:self-start"
+      >
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
+
+
       {showOverlay && (
         <div
           id="overlay"
